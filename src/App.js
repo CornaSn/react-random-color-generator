@@ -1,5 +1,6 @@
 import { randomColor } from 'randomcolor';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 export default function App() {
   const color = randomColor();
@@ -10,7 +11,15 @@ export default function App() {
   return (
     <>
       <div>
-        <h1>Random Color Generator</h1>
+        <h1
+          style={{
+            backgroundColor: 'black',
+            color: `${hexCode}`,
+            textAlign: 'center',
+          }}
+        >
+          Random Color Generator
+        </h1>
       </div>
 
       <div>
@@ -18,10 +27,15 @@ export default function App() {
           style={{
             fontSize: '14px',
             textAlign: 'center',
-            padding: '6px',
-            margin: '20px',
-            border: '1px solid black',
+            padding: '12px',
+            marginLeft: '50px',
+            marginTop: '60px',
+            height: '300px',
+            border: '5px solid black',
+            borderRadius: '30px',
             position: 'absolute',
+            backgroundColor: 'black',
+            color: `${hexCode}`,
           }}
           onClick={() => {
             const newColor = randomColor();
@@ -34,11 +48,13 @@ export default function App() {
       <div
         style={{
           backgroundColor: `${hexCode}`,
+          border: '1px dotted black',
+          borderRadius: '3rem',
           textAlign: 'center',
           fontSize: '30px',
-          margin: '100px',
-          height: '200px',
-          padding: '30px 70px',
+          margin: '30px',
+          height: '20px',
+          padding: '200px',
         }}
       >
         {' '}
