@@ -1,12 +1,12 @@
-import { randomColor } from 'randomcolor';
+import randomColor from 'randomcolor';
 import { useState } from 'react';
 
 export default function App() {
   const color = randomColor();
   // Create a state for the button
   const [hexCode, setHexCode] = useState(color);
-  const [hue, setColorHue] = useState('Enter a hue here...');
-  const [lum, setColorLightness] = useState('Enter a luminosity here...');
+  const [hue, setColorHue] = React.useState('Enter a hue here...');
+  const [lum, setColorLightness] = React.useState('Enter a luminosity here...');
   const param = {
     hue: hue,
     luminosity: lum,
@@ -17,7 +17,7 @@ export default function App() {
       <h1
         style={{
           backgroundColor: 'black',
-          color: `${hexCode}`,
+          color: hexCode,
           textAlign: 'center',
         }}
       >
@@ -67,7 +67,7 @@ export default function App() {
           backgroundColor: '#f0f0f0',
           boxSizing: 'border-box',
           marginLeft: '200px',
-          color: `${hexCode}`,
+          color: hexCode,
         }}
         onClick={() => {
           const newColor = randomColor(param);
@@ -79,13 +79,12 @@ export default function App() {
 
       <div
         style={{
-          backgroundColor: `${hexCode}`,
-          border: '1px dotted black',
+          backgroundColor: hexCode,
+          border: '2px dotted black',
           borderRadius: '3rem',
           textAlign: 'center',
           fontSize: '30px',
-          margin: '3px',
-          height: '10px',
+          margin: '10px',
           padding: '200px',
         }}
       >
