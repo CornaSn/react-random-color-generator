@@ -75,7 +75,7 @@ export default function App() {
           setHexCode(newColor);
         }}
       >
-        Generate Random Color
+        Generate
       </button>
 
       <div
