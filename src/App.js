@@ -5,8 +5,8 @@ export default function App() {
   const color = randomColor();
   // Create a state for the button
   const [hexCode, setHexCode] = useState(color);
-  const [hue, setColorHue] = React.useState('Enter a hue here...');
-  const [lum, setColorLightness] = React.useState('Enter a luminosity here...');
+  const [hue, setHue] = useState('');
+  const [lum, setLum] = useState('');
   const param = {
     hue: hue,
     luminosity: lum,
@@ -28,34 +28,34 @@ export default function App() {
           border: '2px solid #ccc',
           borderRadius: '10%',
           padding: '10px',
-          width: '300px',
-          height: '30px',
           fontSize: '16px',
           backgroundColor: '#f0f0f0',
           color: '#333',
           boxSizing: 'border-box',
-          marginLeft: '300px',
+          marginLeft: '12px',
         }}
         value={hue}
         onChange={(event) => {
-          setColorHue(event.currentTarget.value);
+          setHue(event.currentTarget.value);
         }}
       />
+      <div style={{ marginLeft: '12px' }}>Enter a hue here.</div>
       <input
         style={{
           border: '2px solid #ccc',
           borderRadius: '10%',
           padding: '10px',
-          width: '300px',
-          height: '30px',
           fontSize: '16px',
           backgroundColor: '#f0f0f0',
           color: '#333',
           boxSizing: 'border-box',
+          marginLeft: '12px',
+          marginTop: '20px',
         }}
         value={lum}
-        onChange={(event) => setColorLightness(event.currentTarget.value)}
+        onChange={(event) => setLum(event.currentTarget.value)}
       />
+      <div style={{ marginLeft: '12px' }}>Enter a luminosity here.</div>
       <button
         style={{
           border: '2px solid #ccc',
@@ -66,7 +66,8 @@ export default function App() {
           fontSize: '16px',
           backgroundColor: '#f0f0f0',
           boxSizing: 'border-box',
-          marginLeft: '200px',
+          marginTop: '12px',
+          marginLeft: '20px',
           color: hexCode,
         }}
         onClick={() => {
