@@ -89,7 +89,7 @@ export default function App() {
           padding: '200px',
         }}
       >
-        Generated Color:{hexCode}
+        Generated Color: {hexCode}
       </div>
     </>
   );
